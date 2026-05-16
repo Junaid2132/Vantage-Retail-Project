@@ -1,0 +1,11 @@
+# Local data files ko ignore karein
+dags/raw_retail_data.csv
+dags/clean_retail_data.csv
+
+# Python kachra
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+Thumbs.db
