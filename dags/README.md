@@ -1,28 +1,58 @@
 # Vantage Retail Data Engineering Pipeline
 
-A professional end-to-end Data Engineering pipeline designed to orchestrate, clean, process retail transaction data, and visualize insights through an interactive analytics dashboard.
+An end-to-end Data Engineering pipeline designed to automate retail data processing. This project orchestrates the workflow of ingesting raw transaction data, performing cleaning and transformations, and structuring it for business intelligence reporting.
 
-## 🛠️ Tech Stack & Tools
-* **Orchestration:** Apache Airflow
-* **Containerization:** Docker & Docker Compose
-* **Language:** Python (Pandas / PySpark)
-* **Data Visualization & BI:** Looker Studio (Google Data Studio)
+## 🛠️ Complete Tech Stack
+* **Orchestration:** Apache Airflow (Manages task scheduling, dependencies, and execution logs)
+* **Containerization:** Docker & Docker Compose (Runs the entire Airflow ecosystem locally)
+* **Programming Language:** Python 3 (For core ETL logic and DAG formulation)
+* **Data Transformation:** Pandas (For data cleaning, handling missing values, and formatting)
+* **BI & Analytics:** Looker Studio (For building interactive sales performance dashboards)
 
-## 🏗️ Architecture & Data Workflow
-1. **Infrastructure:** Spin up Apache Airflow services using a multi-container Docker deployment (`docker-compose.yaml`).
-2. **Data Ingestion:** Raw retail transaction logs are ingested into the local data directory.
-3. **Data Transformation (DAGs):** Airflow schedules and monitors the ETL process via Python:
-   * **Extract:** Load the latest raw retail transaction data.
-   * **Transform:** Handle missing values, format dates correctly, and filter duplicates using Pandas.
-   * **Load:** Export the clean, analytics-ready dataset into a final storage tier.
-4. **Analytics & BI:** Connect the refined dataset to **Looker Studio** to build real-time interactive business dashboards (monitoring sales trends, customer behavior, and key retail KPIs).
+## 🏗️ Detailed Project Architecture & Workflow
 
-## 📁 Repository Structure
-* `dags/` - Contains Apache Airflow DAG definitions and data transformation scripts (`my_first_dag.py`).
-* `docker-compose.yaml` - Docker infrastructure configuration for the Airflow environment.
-* `.gitignore` - Safeguards the repository by ignoring large CSV data files, caches, and local logs.
+The pipeline is structured as a robust Directed Acyclic Graph (DAG) running inside a Dockerized environment. Here is exactly how the data flows:
 
-## 🚀 How to Run Locally
-1. Clone this repository:
-   ```bash
-   git clone [https://github.com/Junaid2132/Vantage-Retail-Project.git](https://github.com/Junaid2132/Vantage-Retail-Project.git)
+### 1. Environment Setup (Docker Containerization)
+The infrastructure uses `docker-compose.yaml` to spin up multiple isolated services required by Apache Airflow:
+* **Airflow Webserver:** The GUI dashboard used to trigger, pause, and monitor DAG runs.
+* **Airflow Scheduler:** The engine that monitors tasks and triggers them based on schedule intervals.
+* **Airflow Worker/Triggerer:** Executes the actual Python scripts when assigned.
+
+### 2. The ETL Pipeline Workflow (Apache Airflow DAG)
+The main execution logic resides in `dags/my_first_dag.py`. It automates the following production steps:
+
+* **Step 1: Data Ingestion (Extract)**
+  The pipeline reads raw retail transaction logs from the local directory (`raw_retail_data.csv`). It verifies that the input source is accessible before starting the processing.
+* **Step 2: Data Cleaning & Transformation (Transform)**
+  Using Python and Pandas, the raw data undergoes strict processing inside `clean_retail_data.csv`:
+  * **Handling Null Values:** Fills or removes missing values in crucial columns (like Customer IDs or Transaction Amounts).
+  * **Standardizing Data Types:** Converts string dates into proper datetime format for time-series analysis.
+  * **Removing Duplicates:** Filters out redundant logging entries to keep data accurate.
+* **Step 3: Data Loading (Load)**
+  The highly clean and structured dataset is saved back as an analytics-ready file. This output serves as the single source of truth for downstream processes.
+
+### 3. Business Intelligence & Dashboards (Looker Studio)
+The final clean file is connected as a data source to **Looker Studio**. This allows stakeholders to build live, interactive reports to visualize:
+* Total Sales and Revenue trends over time.
+* Best-selling product categories.
+* Customer purchasing patterns and data health metrics.
+
+---
+
+## 📁 Repository Structure Explained
+* 📁 `dags/` - The core directory containing your data engineering logic.
+  * 📄 `my_first_dag.py` - The main Python file where the Airflow DAG layout, task dependencies, and scheduling are defined.
+  * 📄 `raw_retail_data.csv` - The original, uncleaned retail dataset used as the pipeline input.
+  * 📄 `clean_retail_data.csv` - The final transformed output generated by your Python script.
+* 📄 `docker-compose.yaml` - The configuration file containing the official setup to launch all Airflow components in Docker containers.
+* 📄 `.gitignore` - A crucial file that keeps temporary logs, local caches, and heavy data files from being uploaded to GitHub, ensuring a clean repository.
+
+---
+
+## 🚀 How to Run and Test This Project Locally
+
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/Junaid2132/Vantage-Retail-Project.git](https://github.com/Junaid2132/Vantage-Retail-Project.git)
+cd Vantage-Retail-Project
