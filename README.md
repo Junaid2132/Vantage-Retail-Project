@@ -54,17 +54,17 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
 
 ## 🚀 How to Launch Project Locally
 
-### 1. Initialize Git Environment
+### Initialize Git Environment
 ```bash
 git clone [https://github.com/Junaid2132/Vantage-Retail-Project.git](https://github.com/Junaid2132/Vantage-Retail-Project.git)
 cd Vantage-Retail-Project2.
  
- ### 2. Boot Container Cluster
+Boot Container Cluster
  ```bash
  docker-compose up -d
 
-### 3. Monitor Pipeline
+Monitor Pipeline
 ```bash
-# Open UI Console: http://localhost:8080
+Open UI Console: http://localhost:8080
 
-# Activate the retail pipeline DAG, and link final output views with Looker Studio panels.
+Activate the retail pipeline DAG, and link final output views with Looker Studio panels.
