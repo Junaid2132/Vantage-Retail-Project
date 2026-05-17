@@ -59,10 +59,12 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
 git clone [https://github.com/Junaid2132/Vantage-Retail-Project.git](https://github.com/Junaid2132/Vantage-Retail-Project.git)
 cd Vantage-Retail-Project2.
  
- 2. Boot Container Cluster
+ ### 2. Boot Container Cluster
+ ```bash
  docker-compose up -d
 
-3. Monitor Pipeline
-Open UI Console: http://localhost:8080
+### 3. Monitor Pipeline
+```bash
+# Open UI Console: http://localhost:8080
 
-Activate the retail pipeline DAG, and link final output views with Looker Studio panels.
+# Activate the retail pipeline DAG, and link final output views with Looker Studio panels.
