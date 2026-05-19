@@ -6,10 +6,8 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
 
 ## 🏗️ Pipeline Architecture
 
-[Raw Data Logs] ──> [Docker Volumes] ──> [Airflow Orchestrator]
-│
-▼
-[Looker Studio BI] <── [Analytical CSV] <── [Python/Pandas ETL]
+<img width="1630" height="531" alt="diagram-export-19-05-2026-10_42_39" src="https://github.com/user-attachments/assets/bcd93d97-a02b-42fa-921f-d8fe6f5c7184" />
+
 
 ### ⚙️ How Data Moves in the Pipeline:
 1. **Infrastructure:** Multi-container Docker Compose setup isolates Apache Airflow engines.
