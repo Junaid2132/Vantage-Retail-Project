@@ -2,14 +2,13 @@
 
 An enterprise-grade, end-to-end Data Engineering pipeline designed to automate retail transaction logs processing. This repository demonstrates clean production data workflows and containerized orchestration.
 
-<br>
+<br><br>
 
 ## 🏗️ Pipeline Architecture
 
 <img width="1630" height="531" alt="diagram-export-19-05-2026-10_42_39" src="https://github.com/user-attachments/assets/bcd93d97-a02b-42fa-921f-d8fe6f5c7184" />
 
-
-
+<br><br>
 
 ### ⚙️ How Data Moves in the Pipeline:
 1. **Infrastructure:** Multi-container Docker Compose setup isolates Apache Airflow engines.
@@ -17,8 +16,7 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
 3. **ETL Task Chain:** Python & Pandas automatically handle data cleaning under strict Airflow DAG task management.
 4. **BI Layer:** Structured analytical outputs are fed straight into **Looker Studio** for corporate visual analytics.
 
-
-
+<br><br>
 
 ## 📊 Pipeline Task Matrix & Validation Metrics
 
@@ -28,16 +26,14 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
 | `transform_retail` | Fixed dates, filled nulls, dropped duplicates | Pandas Engine | 🟢 Success |
 | `load_to_analytics` | Standardized schema export | Local Storage | 🟢 Success |
 
-
-
+<br><br>
 
 ### 📈 Core Metrics Captured:
 * **Log Integrity:** 100% data preservation during structural modifications.
 * **Schema Uniformity:** Raw string streams converted into query-optimized data formats.
 * **Execution Logs:** Airflow tasks strictly track runtime speed and dependency safety.
 
-
-
+<br><br>
 
 ## 🛠️ Technology Stack
 * **Orchestration:** Apache Airflow
@@ -45,8 +41,7 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
 * **Data Processing:** Python 3 & Pandas Engine
 * **Business Intelligence (BI):** Looker Studio (Google Data Studio)
 
-
-
+<br><br>
 
 ## 📁 Repository Directory Setup
 * 📁 `dags/` - Core Data Engineering files.
@@ -56,8 +51,7 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
 * 📄 `docker-compose.yaml` - Multi-service system rules for Docker container environments.
 * 📄 `.gitignore` - Safely protects cloud workspace by filtering out localized diagnostic tracks and runtime memory locks.
 
-
-
+<br><br>
 
 ## 🚀 How to Launch Project Locally
 
