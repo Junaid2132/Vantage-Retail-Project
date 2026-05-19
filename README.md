@@ -2,8 +2,7 @@
 
 An enterprise-grade, end-to-end Data Engineering pipeline designed to automate retail transaction logs processing. This repository demonstrates clean production data workflows and containerized orchestration.
 
-
-
+<br>
 
 ## 🏗️ Pipeline Architecture
 
