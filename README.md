@@ -4,9 +4,11 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
 
 
 
+
 ## 🏗️ Pipeline Architecture
 
 <img width="1630" height="531" alt="diagram-export-19-05-2026-10_42_39" src="https://github.com/user-attachments/assets/bcd93d97-a02b-42fa-921f-d8fe6f5c7184" />
+
 
 
 
@@ -15,6 +17,7 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
 2. **Data Ingestion:** Monitors incoming pipeline staging for transaction sheets (`raw_retail_data.csv`).
 3. **ETL Task Chain:** Python & Pandas automatically handle data cleaning under strict Airflow DAG task management.
 4. **BI Layer:** Structured analytical outputs are fed straight into **Looker Studio** for corporate visual analytics.
+
 
 
 
@@ -28,10 +31,12 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
 
 
 
+
 ### 📈 Core Metrics Captured:
 * **Log Integrity:** 100% data preservation during structural modifications.
 * **Schema Uniformity:** Raw string streams converted into query-optimized data formats.
 * **Execution Logs:** Airflow tasks strictly track runtime speed and dependency safety.
+
 
 
 
@@ -43,6 +48,7 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
 
 
 
+
 ## 📁 Repository Directory Setup
 * 📁 `dags/` - Core Data Engineering files.
   * 📄 `my_first_dag.py` - Main DAG tracking schedules and operations.
@@ -50,6 +56,7 @@ An enterprise-grade, end-to-end Data Engineering pipeline designed to automate r
   * 📄 `clean_retail_data.csv` - Final analytical product.
 * 📄 `docker-compose.yaml` - Multi-service system rules for Docker container environments.
 * 📄 `.gitignore` - Safely protects cloud workspace by filtering out localized diagnostic tracks and runtime memory locks.
+
 
 
 
